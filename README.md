@@ -17,7 +17,7 @@ To solve the puzzle, the program first looks through all the triangles to find t
 "starting triangles", or the ones that lie on the bottom side of the rectangular border
 and that are concave, meaning that if they are inserted now, they will not block any 
 triangles later on. (It will be described later how to determine if a triangle will block
-another triangle later on.)
+another triangle.)
 
 Below is an example of two valid starting triangles. They both lie on the bottom face and
 will not block any triangles later on.
@@ -59,12 +59,12 @@ included).
 Next, the program recursively searches through all the unused triangles until it finds one with 
 a side that is also a boundary line. This triangle is inserted next if it will not block a
 triangle later on. (It will be described later how to determine if a triangle will block
-another triangle later on.) The boundary lines list is updated so that the contact line is
+another triangle.) The boundary lines list is updated so that the contact line is
 removed (since it is no longer exposed), and any new, exposed, upward-facing sides of the newly
 inserted triangle are added to the boundary lines list. 
 
-In the example below, first there are three boundary lines. Once the triangle is inserted, boundary
-line #1 is removed since it is the line of contact, and boundary line #4 is added since it is
+In the example below, first there are three boundary lines. Once the new triangle is inserted, boundary
+line #1 is removed since it is a line of contact, and boundary line #4 is added since it is
 exposed and upward-facing.
  
        ______________________                          ______________________
@@ -77,7 +77,7 @@ exposed and upward-facing.
       |/_________\_______/___|        |/              |/_________\_______/___| FIGURE 4
  
 
-Note that the list of boundary lines will always describe the exposed boundary of all the 
+The list of boundary lines is continually updated so it always describes the exposed boundary of all the 
 triangles inserted so far, as depicted in the example below.
 
       ______________________                          ______________________
@@ -93,6 +93,7 @@ triangles inserted so far, as depicted in the example below.
 This recursive process is repeated until the list of boundary lines is reduced to a size of zero,
 at which point the puzzle is solved. There are no boundary lines in the example below (recal that
 lines on the rectangular border are not considered boundary lines).
+
        ______________________
       |  /\       __/ \__    |
       | /  \   __/       \__ |
