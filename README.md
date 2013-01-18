@@ -21,16 +21,18 @@ another triangle later on.)
 
 Below is an example of two valid starting triangles. They both lie on the bottom face and
 will not block any triangles later on.
-     ______________________
-    |                      |
-    |                      |
-    |                /\    |
-    |    /\         /  \   |
-    |___/__\_______/____\__| FIGURE 1
+
+      ______________________
+     |                      |
+     |                      |
+     |                /\    |
+     |    /\         /  \   |
+     |___/__\_______/____\__| FIGURE 1
 
 
 Below is an example of two invalid starting triangles. The first does not lie on the bottom
 face and the second will block a triangle later on (the one that touches its ride side).
+
        ______________________
       |                 _//  |
       |   /\          _/ /   |
@@ -45,6 +47,7 @@ boundary of all the triangles inserted so far.
  
 There are four boundary lines in the example below (lines touching the border are not
 included).
+
        ______________________
       |                      |
       |                      |
@@ -76,6 +79,7 @@ exposed and upward-facing.
 
 Note that the list of boundary lines will always describe the exposed boundary of all the 
 triangles inserted so far, as depicted in the example below.
+
       ______________________                          ______________________
       |                      |                        |                      |
       |                      |                        |                      |
@@ -104,6 +108,7 @@ is a boundary line, and if inserting the triangle now will not block any triangl
 How is it determined if inserting the triangle now will not block any triangles later on? Look 
 at the point of the triangle that is not an endpoint of the contact line. In the examples
 below, the contact lines are between points A and B, and the third points are points C.
+
        ___________________________                     
       |                          |                      
       |                          |                        
@@ -128,6 +133,7 @@ Is the x-coordinate of this third point (C) between the x-coordinates of the con
 In FIGURE 8, C is not between A and B. This means further tests need to be conducted to determine 
 if the triangle is safe to add now, because this triangle might block another triangle with a side 
 between B and C.
+
        __________________________                           __________________________
       |                          |                         |                          |
       |                          |                         |                          |
@@ -144,6 +150,7 @@ already a boundary line (since this means the triangle which would have been blo
 already been added). In the example below, the line between C and B is already a boundary 
 line (4), so even though the x-coordinate of C is not between the x-coordinates of A and B, 
 it is safe to add the triangle now.
+
        __________________________                           __________________________
       |                          |                         |                          |
       |                          |                         |                          |
