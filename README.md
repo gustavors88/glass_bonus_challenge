@@ -2,9 +2,6 @@ glass_bonus_challenge
 =====================
 Bonus challenge offered to CS106B students winter 2012. Was the only student to solve it.
 
-Author: Joshua Grinberg
-Date: 12-23-2011
-
 Description
 -----------------------
 This program determines how to reassemble a glass window broken into triangular shards by
@@ -13,6 +10,12 @@ from a saved file, or creating his own by drawing triangles on a grid. Once a pu
 loaded or created, the user can then watch an animation of the triangles being dropped 
 from above in the correct order.
 
+Files Written
+-----------------------
+* superheroes.cpp
+
+Strategy
+-----------------------
 To solve the puzzle, the program first looks through all the triangles to find the
 "starting triangles", or the ones that lie on the bottom side of the rectangular border
 and that are concave, meaning that if they are inserted now, they will not block any 
